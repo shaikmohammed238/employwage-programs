@@ -175,3 +175,35 @@ console.log("UC 7G - Number of Days Emp Worked: " +
     empDailyWageArr.reduce(totalDaysWorked, 0));
 
 
+/* UC8: Store the Day and the Daily Wage along with the Total Wage
+        - Use Map to store Day wise Wage
+        - Compute the total wage using  */
+{
+    const MAX_HRS_IN_MONTH = 160;
+    const NUM_OF_WORKING_DAYS = 20;
+    let totalEmpHrs = 0;
+    let totalWorkingDays = 0;
+    let empDailyWageArr = new Array();
+    let empDailyWageMap = new Map();
+
+    function calcDailyWage(empHrs) {
+        return empHrs * WAGE_PER_HOUR;
+    }
+
+    while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
+        totalWorkingDays < NUM_OF_WORKING_DAYS) {
+        totalWorkingDays++;
+        let empCheck = Math.floor(Math.random() * 10) % 3;
+        let empHrs = getWorkingHours(empCheck);
+        totalEmpHrs += empHrs;
+        empDailyWageArr.push(calcDailyWage(empHrs));
+        empDailyWageMap.set(totalWorkingDays, calcDailyWage(empHrs));
+    }
+    console.log(empDailyWageMap);
+    function totalWages(totalWage, dailyWage) {
+        return totalWage + dailyWage;
+    }
+    console.log("UC8 - Total Emp Wage: " +
+        Array.from(empDailyWageMap.values()).reduce(totalWages, 0));
+}
+
