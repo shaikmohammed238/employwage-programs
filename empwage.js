@@ -54,3 +54,17 @@ function getWorkingHours(empCheck) {
     console.log("UC3 - Emp Wage: " + empWage, " Total Working Hours: " + empHrs);
 }
 
+
+// UC 4: Calculating Wages for a Month assuming 20 Working Days in a Month
+{
+    const NUM_OF_WORKING_DAYS = 20;
+    let empHrs = 0;
+    for (let day = 0; day < NUM_OF_WORKING_DAYS; day++) {
+        let empCheck = Math.floor(Math.random() * 10) % 3;
+        empHrs += getWorkingHours(empCheck);
+    }
+    let empWage = empHrs * WAGE_PER_HOUR;
+    console.log("UC 4:- Total Hrs: " + empHrs + " Emp Wage: " + empWage);
+}
+
+
