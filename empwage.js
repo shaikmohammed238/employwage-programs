@@ -7,7 +7,7 @@
         console.log("UC1 - Employee is ABSENT");
     }
     else {
-        console.log("UC - Employee is PRESENT");
+        console.log("UC1 - Employee is PRESENT");
     }
 }
 
